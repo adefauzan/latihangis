@@ -1,1 +1,237 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Interaktif GIS: Konsep Dasar (60 Menit)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary .icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        details[open] summary .icon {
+            transform: rotate(90deg);
+        }
+        .tab-button.active {
+            background-color: #3b82f6; /* bg-blue-500 */
+            color: white;
+            border-color: #3b82f6; /* border-blue-500 */
+        }
+        .analysis-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .analysis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        /* Quiz styles */
+        .quiz-option:has(input:checked) {
+             border-color: #3b82f6;
+             background-color: #eff6ff;
+        }
+        .quiz-option.correct {
+            border-color: #16a34a; /* border-green-600 */
+            background-color: #f0fdf4; /* bg-green-50 */
+        }
+        .quiz-option.incorrect {
+             border-color: #dc2626; /* border-red-600 */
+            background-color: #fef2f2; /* bg-red-50 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-4xl">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-600">Modul Komprehensif Belajar GIS</h1>
+            <p class="text-lg text-gray-600 mt-2">Panduan Konsep Fundamental (Estimasi 60 Menit)</p>
+        </header>
+
+        <div class="space-y-4">
+             <!-- All sections are collapsed for brevity, except the quiz -->
+            <details class="bg-white p-6 rounded-lg shadow-sm">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">1. Pengenalan GIS <span class="icon text-blue-500 transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span></summary>
+                <div class="mt-4 text-gray-700 space-y-4">...</div>
+            </details>
+            <details class="bg-white p-6 rounded-lg shadow-sm">
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">2. Komponen Utama & Data Atribut <span class="icon text-blue-500 transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span></summary>
+                 <div class="mt-4 text-gray-700 space-y-4">...</div>
+            </details>
+            <details class="bg-white p-6 rounded-lg shadow-sm">
+                 <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">3. Model Data Spasial: Vektor vs. Raster <span class="icon text-blue-500 transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span></summary>
+                 <div class="mt-4 text-gray-700 space-y-4">...</div>
+            </details>
+            <details class="bg-white p-6 rounded-lg shadow-sm">
+                 <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">4. Sistem Koordinat & Proyeksi Peta <span class="icon text-blue-500 transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span></summary>
+                 <div class="mt-4 text-gray-700 space-y-4">...</div>
+            </details>
+             <details class="bg-white p-6 rounded-lg shadow-sm">
+                 <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">5. Dasar Peta Datar: Sistem Koordinat Kartesius <span class="icon text-blue-500 transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span></summary>
+                 <div class="mt-4 text-gray-700 space-y-4">...</div>
+            </details>
+             <details class="bg-white p-6 rounded-lg shadow-sm">
+                 <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">6. Analisis Spasial & Aplikasi GIS <span class="icon text-blue-500 transform"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span></summary>
+                 <div class="mt-4 text-gray-700 space-y-4">...</div>
+            </details>
+            
+            <!-- Section 7: Kuis Cepat -->
+             <details class="bg-white p-6 rounded-lg shadow-sm" open>
+                <summary class="flex justify-between items-center cursor-pointer font-semibold text-xl text-gray-900">
+                    7. Uji Pemahaman Anda: Kuis Cepat
+                    <span class="icon text-blue-500 transform">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </span>
+                </summary>
+                <div class="mt-4 text-gray-700 space-y-4">
+                     <p>Uji pengetahuan Anda dengan menjawab 20 pertanyaan berikut.</p>
+                     
+                     <div id="quiz-container" class="space-y-8 mt-6">
+                        <!-- Pertanyaan akan dimuat di sini oleh JavaScript -->
+                     </div>
+
+                     <div class="mt-8 text-center">
+                        <button id="submit-quiz" class="bg-blue-600 text-white font-bold py-2 px-8 rounded-lg hover:bg-blue-700 transition-colors">Cek Jawaban</button>
+                        <div id="quiz-results" class="hidden mt-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Hasil Kuis Anda</h3>
+                            <p id="score" class="text-lg mt-2"></p>
+                            <button id="retry-quiz" class="mt-4 bg-gray-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-600">Coba Lagi</button>
+                        </div>
+                     </div>
+                </div>
+             </details>
+
+        </div>
+
+        <footer class="text-center mt-10 text-gray-500 text-sm">
+            <p>Anda telah menyelesaikan modul konsep fundamental GIS.</p>
+        </footer>
+    </div>
+
+    <script>
+        const quizData = [
+            { question: "1. Apa definisi terbaik dari Sistem Informasi Geografis (GIS)?", options: [ { text: "Sistem untuk membuat peta digital yang indah.", correct: false, rationale: "Fungsi utamanya adalah analisis, bukan hanya visualisasi." }, { text: "Sistem untuk menganalisis dan menampilkan data yang memiliki referensi lokasi di bumi.", correct: true, rationale: "Ini menekankan pada aspek analisis dan hubungan data dengan lokasi." }, { text: "Database besar yang berisi semua alamat di dunia.", correct: false, rationale: "GIS lebih luas dari sekadar database alamat." } ] },
+            { question: "2. Data batas sebuah danau paling tepat digambarkan menggunakan model data apa?", options: [ { text: "Vektor (Poligon)", correct: true, rationale: "Poligon ideal untuk merepresentasikan area dengan batas yang jelas." }, { text: "Vektor (Titik)", correct: false, rationale: "Titik hanya mewakili satu lokasi, tidak cocok untuk area." }, { text: "Raster", correct: false, rationale: "Raster kurang presisi untuk menggambarkan batas yang tegas." } ] },
+            { question: "3. Mengapa PCS lebih baik untuk mengukur jarak daripada GCS?", options: [ { text: "Karena PCS selalu bebas dari distorsi.", correct: false, rationale: "Semua proyeksi peta (PCS) pasti memiliki distorsi." }, { text: "Karena PCS merepresentasikan bumi pada bidang datar dengan satuan panjang (meter/kaki).", correct: true, rationale: "Satuan panjang yang konsisten memungkinkan perhitungan jarak dan luas yang akurat." }, { text: "Karena PCS menggunakan satuan derajat.", correct: false, rationale: "PCS menggunakan meter/kaki; GCS-lah yang menggunakan derajat." } ] },
+            { question: "4. Mana dari berikut ini yang merupakan contoh terbaik dari data Raster?", options: [ { text: "Jaringan jalan raya di sebuah kota.", correct: false, rationale: "Jaringan jalan lebih cocok direpresentasikan sebagai data vektor (garis)." }, { text: "Lokasi semua ATM di Jakarta.", correct: false, rationale: "Setiap ATM adalah lokasi tunggal, paling tepat direpresentasikan sebagai vektor (titik)." }, { text: "Citra satelit yang menunjukkan suhu permukaan.", correct: true, rationale: "Suhu adalah data kontinu yang direpresentasikan dengan sempurna oleh grid piksel data raster." } ] },
+            { question: "5. Sebuah titik dengan koordinat (-5, 10) berada di kuadran mana pada sistem Kartesius?", options: [ { text: "Kuadran I", correct: false, rationale: "Kuadran I memiliki X positif dan Y positif." }, { text: "Kuadran II", correct: true, rationale: "Kuadran II adalah tempat di mana nilai X negatif dan nilai Y positif." }, { text: "Kuadran III", correct: false, rationale: "Kuadran III memiliki X negatif dan Y negatif." } ] },
+            { question: "6. Analisis spasial untuk membuat zona radius 500 meter di sekitar semua sekolah disebut...", options: [ { text: "Query", correct: false, rationale: "Query digunakan untuk menyeleksi data berdasarkan atributnya." }, { text: "Overlay", correct: false, rationale: "Overlay digunakan untuk menggabungkan dua layer data yang berbeda." }, { text: "Buffering", correct: true, rationale: "Buffering adalah proses untuk membuat poligon zona dengan jarak tertentu." } ] },
+            { question: "7. Apa fungsi utama dari Datum (misalnya WGS 84) dalam GIS?", options: [ { text: "Sebagai kerangka acuan untuk semua pengukuran lokasi di bumi.", correct: true, rationale: "Datum mendefinisikan bentuk ellipsoid bumi dan titik awalnya." }, { text: "Untuk menentukan skema warna peta.", correct: false, rationale: "Skema warna berkaitan dengan simbologi, bukan kerangka acuan." }, { text: "Untuk menyimpan data atribut.", correct: false, rationale: "Data atribut disimpan dalam tabel, tidak ditentukan oleh datum." } ] },
+            { question: "8. Anda ingin mengetahui area tumpang tindih antara peta jenis tanah dan peta lereng. Analisis spasial yang paling tepat adalah...", options: [ { text: "Buffering", correct: false, rationale: "Buffering menciptakan zona jarak, tidak cocok untuk menggabungkan layer." }, { text: "Analisis Jaringan", correct: false, rationale: "Analisis jaringan digunakan untuk mencari rute pada jaringan seperti jalan." }, { text: "Overlay", correct: true, rationale: "Overlay adalah metode yang tepat untuk menumpuk layer peta." } ] },
+            { question: "9. Sumbu vertikal dalam sistem koordinat Kartesius yang setara dengan 'Northing' dalam GIS disebut...", options: [ { text: "Sumbu Y (Ordinat)", correct: true, rationale: "Sumbu Y adalah sumbu vertikal, setara dengan Northing (nilai Utara)." }, { text: "Sumbu X (Absis)", correct: false, rationale: "Sumbu X adalah sumbu horizontal, setara dengan Easting (nilai Timur)." }, { text: "Garis Lintang (Latitude)", correct: false, rationale: "Garis Lintang adalah bagian dari GCS (sistem 3D)." } ] },
+            { question: "10. Manakah dari berikut ini yang BUKAN merupakan salah satu dari lima komponen utama GIS?", options: [ { text: "Data", correct: false, rationale: "Data adalah komponen paling fundamental dalam GIS." }, { text: "Internet", correct: true, rationale: "Internet sangat membantu, tapi GIS dapat beroperasi secara offline." }, { text: "Manusia (Brainware)", correct: false, rationale: "Manusia adalah komponen penting yang merancang dan menafsirkan hasil GIS." } ] },
+            { question: "11. Apa itu data atribut?", options: [ { text: "Informasi deskriptif tentang fitur geografis.", correct: true, rationale: "Atribut menjelaskan 'apa' dari sebuah fitur di peta." }, { text: "Data koordinat X dan Y.", correct: false, rationale: "Itu adalah data spasial, bukan atribut." }, { text: "Sebuah file gambar seperti citra satelit.", correct: false, rationale: "Itu adalah contoh data raster." } ] },
+            { question: "12. Jaringan rel kereta api paling tepat dimodelkan sebagai data...", options: [ { text: "Vektor (Garis)", correct: true, rationale: "Rel kereta api adalah fitur linier yang paling baik direpresentasikan oleh garis." }, { text: "Vektor (Poligon)", correct: false, rationale: "Poligon digunakan untuk area, bukan jalur." }, { text: "Raster", correct: false, rationale: "Raster tidak efisien untuk merepresentasikan jaringan yang tipis dan panjang." } ] },
+            { question: "13. Apa kelemahan utama dari model data raster?", options: [ { text: "Struktur datanya terlalu kompleks.", correct: false, rationale: "Struktur raster (grid) sebenarnya sangat sederhana." }, { text: "Tidak bisa menampilkan data kontinu seperti suhu.", correct: false, rationale: "Raster justru sangat ideal untuk data kontinu." }, { text: "Ukuran file bisa sangat besar dan batas fitur tidak presisi.", correct: true, rationale: "Setiap piksel harus disimpan, dan batasnya 'kotak-kotak' (pixelated)." } ] },
+            { question: "14. Apa yang dimaksud dengan Proyeksi Peta?", options: [ { text: "Proses mencetak peta ke kertas.", correct: false, rationale: "Mencetak adalah output, bukan proses transformasi matematisnya." }, { text: "Metode matematis untuk mengubah permukaan bola menjadi bidang datar.", correct: true, rationale: "Ini adalah definisi inti dari proyeksi peta." }, { text: "Sistem GPS yang digunakan untuk navigasi.", correct: false, rationale: "GPS menggunakan sistem koordinat, tetapi bukan proses proyeksi itu sendiri." } ] },
+            { question: "15. Apa yang PASTI terjadi saat memproyeksikan permukaan bumi ke peta datar?", options: [ { text: "Warna peta berubah.", correct: false, rationale: "Warna adalah pilihan kartografis, bukan hasil dari proyeksi." }, { text: "Terjadi distorsi pada bentuk, area, jarak, atau arah.", correct: true, rationale: "Tidak mungkin membuat peta datar dari permukaan bola tanpa adanya distorsi." }, { text: "Ukuran file data menjadi lebih kecil.", correct: false, rationale: "Proses proyeksi tidak berhubungan langsung dengan ukuran file." } ] },
+            { question: "16. Mana contoh aplikasi GIS di bidang bisnis?", options: [ { text: "Pemantauan habitat satwa liar.", correct: false, rationale: "Ini adalah aplikasi di bidang lingkungan." }, { text: "Penentuan lokasi gerai baru yang strategis.", correct: true, rationale: "Ini adalah contoh site selection yang umum dalam analisis bisnis." }, { text: "Perencanaan rute evakuasi bencana.", correct: false, rationale: "Ini adalah aplikasi di bidang manajemen bencana." } ] },
+            { question: "17. Sebuah titik dengan koordinat (3, -4) berada di kuadran mana?", options: [ { text: "Kuadran I", correct: false, rationale: "Kuadran I memiliki X positif dan Y positif." }, { text: "Kuadran II", correct: false, rationale: "Kuadran II memiliki X negatif dan Y positif." }, { text: "Kuadran IV", correct: true, rationale: "Kuadran IV adalah tempat di mana nilai X positif dan nilai Y negatif." } ] },
+            { question: "18. Apa nama lain untuk sumbu X dalam sistem koordinat terproyeksi GIS?", options: [ { text: "Lintang (Latitude)", correct: false, rationale: "Latitude adalah bagian dari GCS dan berhubungan dengan sumbu Y." }, { text: "Easting", correct: true, rationale: "Easting (Timuran) adalah nilai untuk sumbu X dalam sistem terproyeksi seperti UTM." }, { text: "Northing", correct: false, rationale: "Northing adalah nilai untuk sumbu Y." } ] },
+            { question: "19. Analisis untuk mencari rute terpendek di jaringan jalan disebut...", options: [ { text: "Overlay", correct: false, rationale: "Overlay menggabungkan layer data, bukan mencari rute." }, { text: "Analisis Jaringan (Network Analysis)", correct: true, rationale: "Analisis ini khusus untuk memecahkan masalah rute pada suatu jaringan." }, { text: "Analisis Hot Spot", correct: false, rationale: "Analisis Hot Spot mencari pola pengelompokan data." } ] },
+            { question: "20. Manakah yang merupakan Perangkat Lunak GIS Open Source (gratis)?", options: [ { text: "ArcGIS", correct: false, rationale: "ArcGIS adalah perangkat lunak komersial dan berbayar yang sangat populer." }, { text: "QGIS", correct: true, rationale: "QGIS adalah perangkat lunak GIS gratis dan open source yang sangat kuat dan populer." }, { text: "AutoCAD", correct: false, rationale: "AutoCAD adalah software untuk desain (CAD), bukan sistem GIS secara spesifik." } ] },
+        ];
+
+        const submitBtn = document.getElementById('submit-quiz');
+        const retryBtn = document.getElementById('retry-quiz');
+        const resultsContainer = document.getElementById('quiz-results');
+        const scoreEl = document.getElementById('score');
+        const quizContainer = document.getElementById('quiz-container');
+
+        function renderQuiz() {
+            quizContainer.innerHTML = '';
+            quizData.forEach((item, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'quiz-question';
+                questionDiv.id = `q${index + 1}`;
+
+                let optionsHtml = '';
+                item.options.forEach((option, optionIndex) => {
+                    optionsHtml += `
+                        <label class="quiz-option block p-3 rounded-lg border border-gray-300 cursor-pointer hover:bg-gray-100">
+                            <input type="radio" name="q${index + 1}" value="${optionIndex}" class="mr-3 align-middle">${option.text}
+                        </label>
+                    `;
+                });
+
+                questionDiv.innerHTML = `
+                    <p class="font-semibold">${item.question}</p>
+                    <div class="space-y-2 mt-3">${optionsHtml}</div>
+                    <div class="feedback hidden mt-2 p-3 text-sm rounded-lg"></div>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        submitBtn.addEventListener('click', () => {
+            let score = 0;
+            let allAnswered = true;
+            const questions = quizContainer.querySelectorAll('.quiz-question');
+
+            questions.forEach((questionDiv, index) => {
+                const selected = questionDiv.querySelector('input:checked');
+                const feedbackEl = questionDiv.querySelector('.feedback');
+                const questionData = quizData[index];
+
+                if (!selected) {
+                    allAnswered = false;
+                    feedbackEl.textContent = "Anda belum menjawab pertanyaan ini.";
+                    feedbackEl.className = 'feedback mt-2 p-3 text-sm rounded-lg bg-yellow-100 text-yellow-800';
+                    feedbackEl.classList.remove('hidden');
+                    return;
+                }
+
+                const selectedIndex = parseInt(selected.value);
+                const selectedOptionData = questionData.options[selectedIndex];
+                
+                questionDiv.querySelectorAll('.quiz-option').forEach((label, labelIndex) => {
+                    const optionData = questionData.options[labelIndex];
+                    if (optionData.correct) {
+                        label.classList.add('correct');
+                    }
+                    label.querySelector('input').disabled = true;
+                });
+                
+                if (selectedOptionData.correct) {
+                    score++;
+                    feedbackEl.textContent = `Benar! ${selectedOptionData.rationale}`;
+                    feedbackEl.className = 'feedback mt-2 p-3 text-sm rounded-lg bg-green-100 text-green-800';
+                } else {
+                    selected.parentElement.classList.add('incorrect');
+                    feedbackEl.textContent = `Kurang Tepat. ${selectedOptionData.rationale}`;
+                    feedbackEl.className = 'feedback mt-2 p-3 text-sm rounded-lg bg-red-100 text-red-800';
+                }
+                feedbackEl.classList.remove('hidden');
+            });
+
+            if(allAnswered) {
+                scoreEl.textContent = `Skor Anda: ${score} dari ${questions.length} benar.`;
+                resultsContainer.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        });
+        
+        retryBtn.addEventListener('click', () => {
+            renderQuiz();
+            resultsContainer.classList.add('hidden');
+            submitBtn.classList.remove('hidden');
+        });
+
+        // Initial render of the quiz
+        renderQuiz();
+    </script>
+</body>
+</html>
+
